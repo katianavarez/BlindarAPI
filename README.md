@@ -29,3 +29,7 @@ src/
 
 Cada módulo sigue la misma forma: `dominio/` (entidades + interfaz del repositorio), `dto/`,
 `infra/` (repositorio en memoria) y el token de inyección en `<módulo>.tokens.ts`.
+
+## Diagrama de la base de datos
+
+![](diagrammysql.png)
