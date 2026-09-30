@@ -1,4 +1,16 @@
+import { IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator";
+
 // Todo opcional: un PATCH manda solo lo que cambia.
-export interface ActualizarClaseDto {
+export class ActualizarClaseDto {
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(80)
   nombre?: string;
+
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(255)
+  descripcion?: string;
 }

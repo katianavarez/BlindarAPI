@@ -41,7 +41,7 @@ model Miembro {
   id          Int @id @default(autoincrement())
   nombre      String @db.VarChar(100)
   correo      String @unique @db.VarChar(150)
-  membresia   String @unique @db.VarChar(20)
+  membresia   String @db.VarChar(20)
   activo      Boolean @default(true)
   inscripciones Inscripcion[]
 
@@ -58,7 +58,7 @@ model Inscripcion {
   horarioId   Int
   miembroId   Int
   estado      EstadoInscripcion @default(confirmada)
-  creadoEn    DateTime @default(now())
+  creadaEn    DateTime @default(now()) @map("creadoEn")
 
   horario     Horario @relation(fields: [horarioId], references: [id], onDelete: Cascade)
   miembro     Miembro @relation(fields: [miembroId], references: [id], onDelete: Cascade)

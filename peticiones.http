@@ -166,3 +166,24 @@ GET {{host}}/horarios/99
 
 ### 27. Horarios - eliminar  ->  200
 DELETE {{host}}/horarios/4
+
+
+### A. Crear un horario con cupo 1  ->  201
+POST {{host}}/horarios
+Content-Type: application/json
+
+{ "claseId": 2, "dia": "lunes", "horaInicio": "07:00", "cupoMaximo": 1, "entrenador": "Ana Lopez" }
+
+
+### B. Crear miembro  ->  201
+POST {{host}}/miembros
+Content-Type: application/json
+
+{ "nombre": "Karla Duarte", "correo": "karla@gmail.com", "membresia": "premium" }
+
+
+### C. Crear otro miembro  ->  201
+POST {{host}}/miembros
+Content-Type: application/json
+
+{ "nombre": "Omar Cota", "correo": "omar@gmail.com", "membresia": "plus" }
